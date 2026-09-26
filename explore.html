@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore — Philly Street Food</title>
+
+    <link rel="stylesheet" href="explore.css">
+
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+</head>
+
+<body>
+
+    <header class="explore-header">
+        <a href="index.html" class="logo">Philly Street Food</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+            <h1>Explore Philly Street Food</h1>
+
+            <p>
+                Discover food trucks, carts, stands, and pop-ups around Philadelphia.
+            </p>
+        </section>
+
+
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search vendors or food..."
+            >
+
+            <select id="cuisineFilter">
+                <option value="all">All cuisines</option>
+                <option value="mexican">Mexican</option>
+                <option value="halal">Halal</option>
+                <option value="american">American</option>
+                <option value="dessert">Dessert</option>
+                <option value="pizza">Pizza</option>
+                <option value="asian">Asian</option>
+            </select>
+
+            <select id="priceFilter">
+                <option value="all">Any price</option>
+                <option value="$">$</option>
+                <option value="$$">$$</option>
+                <option value="$$$">$$$</option>
+            </select>
+
+            <label class="open-filter">
+                <input type="checkbox" id="openNowFilter">
+                Open now
+            </label>
+
+        </section>
+
+
+        <section class="explore-layout">
+
+            <div class="map-container">
+                <h2>Map</h2>
+
+                <div id="map">
+                    <p>Map coming soon</p>
+                </div>
+            </div>
+
+
+            <div class="vendors-container">
+
+                <div class="vendors-heading">
+                    <h2>Nearby Vendors</h2>
+                    <span id="vendorCount"></span>
+                </div>
+
+                <div id="vendorList" class="vendor-list"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <script src="explore.js"></script>
+
+</body>
+</html>

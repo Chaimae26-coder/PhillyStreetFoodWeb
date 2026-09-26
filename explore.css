@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+
+.explore-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #222;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444;
+}
+
+main {
+    max-width: 1400px;
+    margin: auto;
+    padding: 40px;
+}
+
+.hero {
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+}
+
+.search-section {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    background: white;
+    padding: 20px;
+
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.search-section input,
+.search-section select {
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+.search-section input {
+    min-width: 260px;
+}
+
+.open-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.explore-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+}
+
+.map-container,
+.vendors-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+#map {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eee;
+    border-radius: 10px;
+
+    color: #777;
+}
+
+.vendors-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vendor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.vendor-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.vendor-title-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.vendor-title-row h3 {
+    margin: 0;
+}
+
+.rating {
+    white-space: nowrap;
+}
+
+.vendor-description {
+    color: #666;
+}
+
+.vendor-info {
+    display: flex;
+    gap: 15px;
+    color: #555;
+}
+
+.vendor-location {
+    color: #555;
+}
+
+.open {
+    color: green;
+}
+
+.closed {
+    color: #999;
+}
+
+.view-vendor {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: #222;
+    color: white;
+}
+
+@media (max-width: 900px) {
+
+    .explore-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #map {
+        min-height: 350px;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
