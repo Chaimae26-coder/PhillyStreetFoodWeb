@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Reviews | Philly Street Food</title>
+
+    <link rel="stylesheet" href="reviews.css">
+</head>
+
+<body>
+
+    <main class="reviews-container">
+
+        <!-- Header -->
+        <header class="reviews-header">
+
+            <p class="eyebrow">
+                PHILLY STREET FOOD
+            </p>
+
+            <h1>Customer Reviews</h1>
+
+            <p class="subtitle">
+                Find the food that doesn't have a front door.
+            </p>
+
+        </header>
+
+
+        <!-- Vendor -->
+        <section class="vendor-card">
+
+            <div class="vendor-icon">
+                🌮
+            </div>
+
+            <div class="vendor-info">
+
+                <p class="small-title">
+                    VENDOR REVIEWS
+                </p>
+
+                <h2>
+                    Taco El Barrio
+                </h2>
+
+                <p class="location">
+                    📍 12th & Market St
+                    • Mexican
+                    • $
+                </p>
+
+            </div>
+
+            <div class="rating-box">
+
+                <strong>4.7</strong>
+
+                <span>
+                    ⭐⭐⭐⭐⭐
+                </span>
+
+                <small>
+                    Customer rating
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- Reviews -->
+        <section class="reviews-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>
+                        What people are saying
+                    </h2>
+
+                    <p>
+                        Real experiences from customers.
+                    </p>
+                </div>
+
+                <span id="reviewCount">
+                    3 reviews
+                </span>
+
+            </div>
+
+
+            <div id="reviewsList">
+
+                <!-- Review 1 -->
+                <article class="review-card">
+
+                    <div class="review-header">
+
+                        <div class="review-user">
+
+                            <div class="avatar">
+                                M
+                            </div>
+
+                            <strong>
+                                Maya
+                            </strong>
+
+                        </div>
+
+                        <span class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Amazing tacos! The food was fresh
+                        and my order was ready right on time.
+                    </p>
+
+                </article>
+
+
+                <!-- Review 2 -->
+                <article class="review-card">
+
+                    <div class="review-header">
+
+                        <div class="review-user">
+
+                            <div class="avatar">
+                                J
+                            </div>
+
+                            <strong>
+                                Jordan
+                            </strong>
+
+                        </div>
+
+                        <span class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </span>
+
+                    </div>
+
+                    <p>
+                        The burrito was delicious and the
+                        ordering process was really easy.
+                    </p>
+
+                </article>
+
+
+                <!-- Review 3 -->
+                <article class="review-card">
+
+                    <div class="review-header">
+
+                        <div class="review-user">
+
+                            <div class="avatar">
+                                A
+                            </div>
+
+                            <strong>
+                                Alex
+                            </strong>
+
+                        </div>
+
+                        <span class="stars">
+                            ⭐⭐⭐⭐
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Great street food and very affordable.
+                        Definitely coming back!
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Review Form -->
+        <section class="review-form">
+
+            <div class="form-heading">
+
+                <span class="form-icon">
+                    ✍️
+                </span>
+
+                <div>
+
+                    <h2>
+                        Leave a Review
+                    </h2>
+
+                    <p>
+                        Tell other food lovers about your experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <label for="reviewName">
+                Your Name
+            </label>
+
+            <input
+                id="reviewName"
+                type="text"
+                placeholder="Enter your name"
+                autocomplete="name"
+            >
+
+
+            <label for="reviewRating">
+                Rating
+            </label>
+
+            <select id="reviewRating">
+
+                <option value="" disabled selected>
+                    Choose a rating
+                </option>
+
+                <option value="5">
+                    ⭐⭐⭐⭐⭐ — Excellent
+                </option>
+
+                <option value="4">
+                    ⭐⭐⭐⭐ — Great
+                </option>
+
+                <option value="3">
+                    ⭐⭐⭐ — Good
+                </option>
+
+                <option value="2">
+                    ⭐⭐ — Okay
+                </option>
+
+                <option value="1">
+                    ⭐ — Poor
+                </option>
+
+            </select>
+
+
+            <label for="reviewText">
+                Your Review
+            </label>
+
+            <textarea
+                id="reviewText"
+                rows="5"
+                maxlength="300"
+                placeholder="Tell us about your experience..."
+            ></textarea>
+
+            <div class="character-count">
+                <span id="characterCount">
+                    0
+                </span>
+                / 300
+            </div>
+
+
+            <button
+                id="submitReviewButton"
+                type="button"
+            >
+                <span>Submit Review</span>
+                <span>→</span>
+            </button>
+
+
+            <p id="reviewMessage"></p>
+
+        </section>
+
+
+        <!-- Back -->
+        <a
+            href="order.html"
+            class="back-button"
+        >
+            ← Back to Order
+        </a>
+
+    </main>
+
+
+    <script src="reviews.js"></script>
+
+</body>
+
+</html>

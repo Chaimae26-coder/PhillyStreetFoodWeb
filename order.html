@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Ahead | Philly Street Food</title>
+
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+
+    <main class="order-container">
+
+        <!-- Header -->
+        <header class="order-header">
+            <p class="eyebrow">PHILLY STREET FOOD</p>
+
+            <h1>Your Order</h1>
+
+            <p class="subtitle">
+                Review your order before checking out.
+            </p>
+        </header>
+
+
+        <!-- Restaurant -->
+        <section class="restaurant-card">
+
+            <div class="restaurant-icon">
+                🌮
+            </div>
+
+            <div>
+                <h2>Taco El Barrio</h2>
+
+                <p>
+                    Authentic Mexican street food
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Order -->
+        <section class="order-section">
+
+            <div class="section-heading">
+
+                <h3>Your Items</h3>
+
+                <span>3 items</span>
+
+            </div>
+
+
+            <div id="cart">
+
+                <p id="emptyCart">
+                    Your order is empty.
+                </p>
+
+            </div>
+
+
+            <!-- Total -->
+            <div class="total-row grand-total">
+
+                <strong>Total</strong>
+
+                <strong id="total">
+                    $0.00
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- Pickup -->
+        <section class="pickup-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h3>⏰ Pickup Time</h3>
+
+                    <p>
+                        Choose a convenient time for pickup.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <label for="pickupTime">
+                Select a time
+            </label>
+
+
+            <select id="pickupTime" name="pickupTime">
+
+                <option value="" disabled selected>
+                    Select pickup time
+                </option>
+
+                <option>8:00 AM</option>
+                <option>8:30 AM</option>
+                <option>9:00 AM</option>
+                <option>9:30 AM</option>
+                <option>10:00 AM</option>
+                <option>10:30 AM</option>
+                <option>11:00 AM</option>
+                <option>11:30 AM</option>
+                <option>12:00 PM</option>
+                <option>12:30 PM</option>
+                <option>1:00 PM</option>
+                <option>1:30 PM</option>
+                <option>2:00 PM</option>
+                <option>2:30 PM</option>
+                <option>3:00 PM</option>
+                <option>3:30 PM</option>
+                <option>4:00 PM</option>
+                <option>4:30 PM</option>
+                <option>5:00 PM</option>
+                <option>5:30 PM</option>
+                <option>6:00 PM</option>
+                <option>6:30 PM</option>
+                <option>7:00 PM</option>
+                <option>7:30 PM</option>
+                <option>8:00 PM</option>
+
+            </select>
+
+        </section>
+
+
+        <!-- Error Message -->
+        <p id="message"></p>
+
+
+        <!-- Place Order -->
+        <button
+            id="placeOrderButton"
+            class="place-order-button">
+
+            <span>Place Order</span>
+
+            <span>→</span>
+
+        </button>
+
+
+        <p class="secure-note">
+            🔒 Your order is secure
+        </p>
+
+
+        <!-- Confirmation -->
+        <section
+            id="confirmation"
+            class="confirmation hidden">
+
+            <div class="checkmark">
+                ✓
+            </div>
+
+            <h2>
+                Order Confirmed!
+            </h2>
+
+            <p>
+                Thanks for ordering from Taco El Barrio.
+            </p>
+
+
+            <div class="confirmation-details">
+
+                <p>Pickup Time</p>
+
+                <h3 id="confirmedPickup"></h3>
+
+
+                <p>Total</p>
+
+                <h3 id="confirmedTotal"></h3>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="order.js"></script>
+
+</body>
+
+</html>
