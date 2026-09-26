@@ -1,0 +1,480 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #252525;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1e6,
+            #fff8dc,
+            #e9f9ed
+        );
+
+    padding: 30px 15px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+    width: 100%;
+    max-width: 750px;
+
+    margin: 0 auto 25px;
+
+    padding: 25px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 2px solid #fed7aa;
+
+    box-shadow:
+        0 10px 30px rgba(120, 53, 15, 0.10);
+}
+
+header h1 {
+    margin: 0;
+
+    color: #7c2d12;
+
+    font-size: 32px;
+}
+
+header p {
+    margin: 8px 0 0;
+
+    color: #777;
+
+    font-size: 15px;
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.container {
+    width: 90%;
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   MAIN CARDS
+======================================== */
+
+.vendor-card,
+.reviews-section,
+.review-form {
+    position: relative;
+
+    background: white;
+
+    padding: 28px;
+
+    margin-bottom: 22px;
+
+    border-radius: 20px;
+
+    border: 2px solid #fed7aa;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.06);
+
+    overflow: hidden;
+}
+
+
+/* Color stripe */
+
+.vendor-card::before,
+.reviews-section::before,
+.review-form::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ef4444,
+            #f97316,
+            #facc15,
+            #22c55e
+        );
+}
+
+
+/* ========================================
+   VENDOR CARD
+======================================== */
+
+.small-title {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #f97316;
+}
+
+.vendor-card h2 {
+    margin: 8px 0;
+
+    color: #7c2d12;
+
+    font-size: 27px;
+}
+
+.rating {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    margin: 8px 0 12px;
+
+    background: #fef3c7;
+
+    color: #92400e;
+
+    border-radius: 20px;
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+.location {
+    color: #777;
+
+    margin-bottom: 0;
+}
+
+
+/* ========================================
+   REVIEWS
+======================================== */
+
+.reviews-section h2 {
+    margin-top: 0;
+
+    color: #7c2d12;
+
+    font-size: 24px;
+}
+
+
+/* Individual review */
+
+.review-card {
+    padding: 20px 0;
+
+    border-bottom: 1px solid #eee;
+
+    transition:
+        transform 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.review-card:last-child {
+    border-bottom: none;
+}
+
+.review-card:hover {
+    transform: translateX(5px);
+
+    padding-left: 8px;
+}
+
+
+/* Review header */
+
+.review-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.review-header strong {
+    color: #292524;
+
+    font-size: 17px;
+}
+
+.review-header span {
+    font-size: 14px;
+}
+
+
+/* Review text */
+
+.review-card p {
+    color: #555;
+
+    line-height: 1.7;
+
+    margin-bottom: 0;
+}
+
+
+/* ========================================
+   REVIEW FORM
+======================================== */
+
+.review-form h2 {
+    margin-top: 0;
+
+    color: #166534;
+
+    font-size: 24px;
+}
+
+.review-form label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+
+    margin-bottom: 8px;
+
+    color: #44403c;
+}
+
+
+/* ========================================
+   INPUTS
+======================================== */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 2px solid #e7e5e4;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-family: Arial, sans-serif;
+
+    background: #fafaf9;
+
+    color: #252525;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #f97316;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(249, 115, 22, 0.12);
+}
+
+textarea {
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+
+#submitReviewButton {
+    width: 100%;
+
+    padding: 16px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dc2626,
+            #f97316
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(234, 88, 12, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#submitReviewButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(234, 88, 12, 0.35);
+}
+
+#submitReviewButton:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+#reviewMessage {
+    text-align: center;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+
+    color: #15803d;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.back-button {
+    display: block;
+
+    width: fit-content;
+
+    margin: 30px auto;
+
+    padding: 13px 24px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #292524;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.back-button:hover {
+    background: #000;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    header {
+        padding: 22px 18px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .container {
+        width: 96%;
+    }
+
+    .vendor-card,
+    .reviews-section,
+    .review-form {
+        padding: 21px;
+
+        border-radius: 17px;
+    }
+
+    .vendor-card h2 {
+        font-size: 23px;
+    }
+
+    .review-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+    #submitReviewButton {
+        padding: 15px;
+    }
+}
