@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Order | Philly Street Food
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="order.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="nav-container">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <span class="brand-icon">
+                🍴
+            </span>
+
+            <span>
+                Philly
+                <strong>Street Food</strong>
+            </span>
+
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="explore.html">
+                Explore
+            </a>
+
+            <a
+                href="order.html"
+                class="active"
+            >
+                Order
+            </a>
+
+            <a href="reviews.html">
+                Reviews
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="explore.html"
+                class="back-explore"
+            >
+                ← Explore
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="order-page">
+
+
+<!-- VENDOR HEADER -->
+
+<section class="order-hero">
+
+    <div class="order-hero-top">
+
+        <div>
+
+            <span class="mini-label">
+                ORDER AHEAD
+            </span>
+
+            <div class="vendor-title">
+
+                <span
+                    id="vendorIcon"
+                    class="vendor-icon"
+                >
+                    🌮
+                </span>
+
+                <div>
+
+                    <h1 id="vendorName">
+                        Taco El Barrio
+                    </h1>
+
+                    <p id="vendorDescription">
+                        Street-style Mexican food
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="vendor-switcher">
+
+            <label for="vendorSelect">
+                Ordering from
+            </label>
+
+            <select id="vendorSelect"></select>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="order-layout">
+
+
+<!-- MENU -->
+
+<section class="menu-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="mini-label">
+                MENU
+            </span>
+
+            <h2>
+                What sounds good?
+            </h2>
+
+        </div>
+
+        <span id="itemCount">
+            0 items
+        </span>
+
+    </div>
+
+
+    <div
+        id="menuItems"
+        class="menu-items"
+    ></div>
+
+</section>
+
+
+<!-- CART -->
+
+<aside class="cart-panel">
+
+    <div class="cart-header">
+
+        <div>
+
+            <span class="mini-label">
+                YOUR ORDER
+            </span>
+
+            <h2>
+                Cart
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div id="cart">
+
+        <p class="empty-cart">
+            Your cart is empty.
+            <br>
+            Add something delicious!
+        </p>
+
+    </div>
+
+
+    <div class="total-row">
+
+        <span>
+            Total
+        </span>
+
+        <strong id="total">
+            $0.00
+        </strong>
+
+    </div>
+
+
+    <div class="pickup-section">
+
+        <span class="mini-label">
+            PICKUP
+        </span>
+
+        <h3>
+            Choose a pickup time
+        </h3>
+
+        <p>
+            We'll have your order ready for you.
+        </p>
+
+
+        <label for="pickupTime">
+            Pickup time
+        </label>
+
+
+        <select id="pickupTime">
+
+            <option value="">
+                Choose a time
+            </option>
+
+            <option>
+                12:00 PM
+            </option>
+
+            <option>
+                12:30 PM
+            </option>
+
+            <option>
+                1:00 PM
+            </option>
+
+            <option>
+                1:30 PM
+            </option>
+
+            <option>
+                2:00 PM
+            </option>
+
+            <option>
+                2:30 PM
+            </option>
+
+            <option>
+                3:00 PM
+            </option>
+
+            <option>
+                3:30 PM
+            </option>
+
+            <option>
+                4:00 PM
+            </option>
+
+            <option>
+                4:30 PM
+            </option>
+
+            <option>
+                5:00 PM
+            </option>
+
+            <option>
+                5:30 PM
+            </option>
+
+            <option>
+                6:00 PM
+            </option>
+
+            <option>
+                6:30 PM
+            </option>
+
+            <option>
+                7:00 PM
+            </option>
+
+            <option>
+                7:30 PM
+            </option>
+
+            <option>
+                8:00 PM
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <p id="message"></p>
+
+
+    <button
+        id="placeOrderButton"
+        class="place-order-button"
+        type="button"
+    >
+        Place Order →
+    </button>
+
+
+    <p class="secure-note">
+        🔒 Demo checkout — no real payment
+    </p>
+
+</aside>
+
+</div>
+
+
+<!-- CONFIRMATION -->
+
+<section
+    id="confirmation"
+    class="confirmation hidden"
+>
+
+    <div class="confirmation-icon">
+        ✓
+    </div>
+
+    <span class="mini-label">
+        ALL SET
+    </span>
+
+    <h2>
+        Order Confirmed!
+    </h2>
+
+    <p>
+        Your order from
+        <strong id="confirmedVendor"></strong>
+        is ready to be picked up.
+    </p>
+
+
+    <div class="confirmation-details">
+
+        <div>
+
+            <span>
+                Pickup
+            </span>
+
+            <strong id="confirmedPickup">
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Total
+            </span>
+
+            <strong id="confirmedTotal">
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="confirmation-actions">
+
+        <a
+            href="index.html"
+            class="secondary-button"
+        >
+            ← Home
+        </a>
+
+        <a
+            href="reviews.html"
+            class="primary-button"
+        >
+            Leave a Review →
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<script src="order.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Philly Street Food</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         NAVIGATION
+    ========================================= -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- BRAND -->
+
+            <a
+                href="index.html"
+                class="brand"
+            >
+
+                <div class="brand-mark">
+                    🍴
+                </div>
+
+                <div class="brand-text">
+
+                    <span>
+                        Philly
+                    </span>
+
+                    <small>
+                        Street Food
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <div class="nav-links">
+
+                <a
+                    href="index.html"
+                    class="active"
+                >
+                    Home
+                </a>
+
+                <a href="explore.html">
+                    Explore
+                </a>
+
+                <a href="order.html">
+                    Order
+                </a>
+
+                <a href="reviews.html">
+                    Reviews
+                </a>
+
+            </div>
+
+
+            <!-- NAVIGATION ACTIONS -->
+
+            <div class="nav-actions">
+
+                <button
+                    class="nav-icon-button"
+                    id="topSearchButton"
+                    type="button"
+                    aria-label="Search"
+                    title="Search"
+                >
+                    🔍
+                </button>
+
+
+                <a
+                    href="explore.html?favorites=true"
+                    class="nav-favorite-button"
+                    id="topLikeButton"
+                    aria-label="View favorites"
+                    title="View favorites"
+                >
+
+                    <span>
+                        ♡
+                    </span>
+
+                    <strong id="favoriteCount">
+                        0
+                    </strong>
+
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE MENU -->
+
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+        >
+
+            <a href="index.html">
+                🏠 Home
+            </a>
+
+            <a href="explore.html">
+                🗺️ Explore
+            </a>
+
+            <a href="order.html">
+                🛒 Order
+            </a>
+
+            <a href="reviews.html">
+                ⭐ Reviews
+            </a>
+
+            <a href="explore.html?favorites=true">
+                ❤️ Favorites
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ========================================
+         HERO
+    ========================================= -->
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+
+                <div class="hero-tag">
+                    🍴 Philly's local food scene
+                </div>
+
+
+                <h1>
+
+                    Find the food
+
+                    <span>
+                        without a front door.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Hungry for something local?
+
+                    Discover food trucks, carts,
+                    stands, and pop-ups serving
+                    delicious food around Philadelphia.
+
+                </p>
+
+
+                <!-- SEARCH -->
+
+                <div
+                    class="search-box"
+                    id="mainSearch"
+                >
+
+                    <span class="search-icon">
+                        🔍
+                    </span>
+
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Try tacos, halal, pizza..."
+                        aria-label="Search street food"
+                        autocomplete="off"
+                    >
+
+
+                    <button
+                        id="searchButton"
+                        type="button"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+
+                <!-- HERO ACTIONS -->
+
+                <div class="hero-actions">
+
+                    <a
+                        href="explore.html"
+                        class="primary-button"
+                    >
+                        Explore Street Food →
+                    </a>
+
+
+                    <a
+                        href="#how-it-works"
+                        class="secondary-button"
+                    >
+                        How it works
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         INTRO
+    ========================================= -->
+
+    <section class="intro-section">
+
+        <div class="container intro-grid">
+
+
+            <div>
+
+                <div class="mini-label">
+                    WHY PHILLY STREET FOOD?
+                </div>
+
+
+                <h2>
+                    Great food doesn't always
+                    have a front door.
+                </h2>
+
+            </div>
+
+
+            <div>
+
+                <p class="intro-text">
+
+                    Some of Philly's best meals are
+                    served from a food truck, a small
+                    cart, a sidewalk stand, or a pop-up.
+
+                    <br>
+                    <br>
+
+                    But finding them can sometimes feel
+                    like a treasure hunt.
+
+                    <br>
+                    <br>
+
+                    <strong>
+                        Philly Street Food makes that
+                        search easier.
+                    </strong>
+
+                    Find something nearby, check the
+                    details, browse the menu, and decide
+                    what sounds good.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         HOW IT WORKS
+    ========================================= -->
+
+    <section
+        class="how-section"
+        id="how-it-works"
+    >
+
+        <div class="container">
+
+
+            <div class="section-heading center">
+
+                <div class="mini-label">
+                    EASY AS 1 • 2 • 3
+                </div>
+
+
+                <h2>
+                    Find your next favorite bite.
+                </h2>
+
+
+                <p>
+                    No complicated menus. No endless searching.
+                </p>
+
+            </div>
+
+
+            <div class="steps-grid">
+
+
+                <!-- STEP 1 -->
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+
+                    <div class="step-icon">
+                        🔎
+                    </div>
+
+
+                    <h3>
+                        Find
+                    </h3>
+
+
+                    <p>
+
+                        Search by what you're craving
+                        or explore food vendors around
+                        Philadelphia.
+
+                    </p>
+
+                </div>
+
+
+                <!-- STEP 2 -->
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+
+                    <div class="step-icon">
+                        🗺️
+                    </div>
+
+
+                    <h3>
+                        Explore
+                    </h3>
+
+
+                    <p>
+
+                        Check the vendor's location,
+                        menu, hours, price, and
+                        customer reviews.
+
+                    </p>
+
+                </div>
+
+
+                <!-- STEP 3 -->
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+
+                    <div class="step-icon">
+                        😋
+                    </div>
+
+
+                    <h3>
+                        Enjoy
+                    </h3>
+
+
+                    <p>
+
+                        Choose your food, order ahead
+                        when available, and enjoy
+                        something delicious.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         CATEGORIES
+    ========================================= -->
+
+    <section class="categories">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <div class="mini-label">
+                    START HERE
+                </div>
+
+
+                <h2>
+                    What are you craving?
+                </h2>
+
+
+                <p>
+                    Pick a category and explore something tasty.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="tacos"
+                >
+
+                    <span class="category-icon">
+                        🌮
+                    </span>
+
+                    <span>
+                        Tacos
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="halal"
+                >
+
+                    <span class="category-icon">
+                        🍗
+                    </span>
+
+                    <span>
+                        Halal
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="pizza"
+                >
+
+                    <span class="category-icon">
+                        🍕
+                    </span>
+
+                    <span>
+                        Pizza
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="burgers"
+                >
+
+                    <span class="category-icon">
+                        🍔
+                    </span>
+
+                    <span>
+                        Burgers
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="healthy"
+                >
+
+                    <span class="category-icon">
+                        🥗
+                    </span>
+
+                    <span>
+                        Healthy
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="dessert"
+                >
+
+                    <span class="category-icon">
+                        🍰
+                    </span>
+
+                    <span>
+                        Desserts
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         FEATURED / FAVORITE VENDOR
+    ========================================= -->
+
+    <section
+        class="featured"
+        id="featured"
+    >
+
+        <div class="container">
+
+
+            <div class="featured-heading">
+
+                <div>
+
+                    <div class="mini-label">
+                        ❤️ YOUR FAVORITE
+                    </div>
+
+
+                    <h2>
+                        Featured Vendor
+                    </h2>
+
+
+                    <p id="featuredSubtitle">
+                        Save a vendor in Explore and
+                        it will appear here.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="explore.html?favorites=true"
+                    class="view-all"
+                >
+                    View favorites →
+                </a>
+
+            </div>
+
+
+            <div
+                id="featuredVendorContainer"
+                class="featured-vendor-container"
+            >
+
+                <!-- JavaScript renders this -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         PHILLY PHOTO
+    ========================================= -->
+
+    <section class="philly-photo-section">
+
+        <div class="philly-photo-overlay"></div>
+
+
+        <div class="container photo-content">
+
+
+            <div class="mini-label">
+                THIS IS PHILLY
+            </div>
+
+
+            <h2>
+
+                Good food.
+                <br>
+
+                Good people.
+                <br>
+
+                Good neighborhoods.
+
+            </h2>
+
+
+            <p>
+
+                From busy streets to neighborhood
+                corners, Philly's food scene is full
+                of little discoveries.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         FINAL CTA
+    ========================================= -->
+
+    <section class="explore-section">
+
+        <div class="container explore-box">
+
+
+            <div class="explore-icon">
+                🗺️
+            </div>
+
+
+            <div>
+
+                <div class="mini-label">
+                    PHILLY IS WAITING
+                </div>
+
+
+                <h2>
+                    Ready to find your next bite?
+                </h2>
+
+
+                <p>
+                    Explore vendors around Philadelphia
+                    and discover something new.
+                </p>
+
+            </div>
+
+
+            <a
+                href="explore.html"
+                class="explore-button"
+            >
+                Explore the Map →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    🍴
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Philly Street Food
+                    </strong>
+
+
+                    <p>
+                        Find the food that doesn't
+                        have a front door.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="explore.html">
+                    Explore
+                </a>
+
+                <a href="order.html">
+                    Order
+                </a>
+
+                <a href="reviews.html">
+                    Reviews
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                Made for Philly food lovers ❤️
+            </p>
+
+
+            <p>
+                © 2026 Philly Street Food
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

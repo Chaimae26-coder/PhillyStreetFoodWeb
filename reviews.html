@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Reviews | Philly Street Food</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link rel="stylesheet" href="reviews.css">
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="nav-container">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+            <span class="brand-icon">
+                🍴
+            </span>
+
+            <span>
+                Philly
+                <strong>Street Food</strong>
+            </span>
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="explore.html">
+                Explore
+            </a>
+
+            <a href="order.html">
+                Order
+            </a>
+
+            <a
+                href="reviews.html"
+                class="active"
+            >
+                Reviews
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="index.html"
+                class="nav-home-button"
+            >
+                Home
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+    <main class="reviews-container">
+
+
+        <!-- ========================================
+             HEADER
+        ========================================= -->
+
+        <header class="reviews-header">
+
+            <p class="eyebrow">
+                PHILLY STREET FOOD
+            </p>
+
+            <h1>
+                Customer Reviews
+            </h1>
+
+            <p class="subtitle">
+                Find the food that doesn't have a front door.
+            </p>
+
+        </header>
+
+
+
+        <!-- ========================================
+             FAVORITE TRUCKS
+        ========================================= -->
+
+        <section class="favorites-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        ❤️ Favorite Trucks
+                    </h2>
+
+                    <p>
+                        Your saved street food favorites.
+                    </p>
+
+                </div>
+
+                <span id="favoriteCount">
+                    0 favorites
+                </span>
+
+            </div>
+
+
+            <div
+                id="favoritesList"
+                class="favorites-list"
+            >
+
+                <!-- Favorite trucks are added here by JavaScript -->
+
+            </div>
+
+
+            <p
+                id="noFavoritesMessage"
+                class="no-favorites-message"
+            >
+                You haven't saved any favorite trucks yet.
+                Go to Explore and tap ❤️ on a vendor you like.
+            </p>
+
+        </section>
+
+
+
+        <!-- ========================================
+             VENDOR
+        ========================================= -->
+
+        <section class="vendor-card">
+
+            <div
+                class="vendor-icon"
+                id="vendorIcon"
+            >
+                🌮
+            </div>
+
+
+            <div class="vendor-info">
+
+                <p class="small-label">
+                    VENDOR REVIEWS
+                </p>
+
+                <h2 id="vendorName">
+                    Taco El Barrio
+                </h2>
+
+                <p
+                    class="location"
+                    id="vendorLocation"
+                >
+                    📍 12th & Market St
+                    • Mexican
+                    • $
+                </p>
+
+            </div>
+
+
+            <!-- Favorite button for current vendor -->
+
+            <button
+                id="favoriteButton"
+                class="favorite-button"
+                type="button"
+                aria-label="Add vendor to favorites"
+            >
+                ♡
+            </button>
+
+
+            <div class="vendor-rating">
+
+                <strong id="vendorRating">
+                    4.7
+                </strong>
+
+                <span
+                    id="vendorStars"
+                    class="stars"
+                >
+                    ⭐⭐⭐⭐⭐
+                </span>
+
+                <span>
+                    Customer rating
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             FAVORITE MESSAGE
+        ========================================= -->
+
+        <p
+            id="favoriteMessage"
+            class="favorite-message"
+        ></p>
+
+
+
+        <!-- ========================================
+             REVIEWS
+        ========================================= -->
+
+        <section class="reviews-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        What people are saying
+                    </h2>
+
+                    <p>
+                        Real experiences from customers.
+                    </p>
+
+                </div>
+
+                <span id="reviewCount">
+                    3 reviews
+                </span>
+
+            </div>
+
+
+
+            <div id="reviewsList">
+
+
+                <!-- Review 1 -->
+
+                <article class="review-card">
+
+                    <div class="review-header">
+
+                        <div class="review-user">
+
+                            <div class="avatar">
+                                M
+                            </div>
+
+                            <strong>
+                                Maya
+                            </strong>
+
+                        </div>
+
+                        <span class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Amazing tacos! The food was fresh
+                        and my order was ready right on time.
+                    </p>
+
+                </article>
+
+
+
+                <!-- Review 2 -->
+
+                <article class="review-card">
+
+                    <div class="review-header">
+
+                        <div class="review-user">
+
+                            <div class="avatar">
+                                J
+                            </div>
+
+                            <strong>
+                                Jordan
+                            </strong>
+
+                        </div>
+
+                        <span class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </span>
+
+                    </div>
+
+                    <p>
+                        The burrito was delicious and the
+                        ordering process was really easy.
+                    </p>
+
+                </article>
+
+
+
+                <!-- Review 3 -->
+
+                <article class="review-card">
+
+                    <div class="review-header">
+
+                        <div class="review-user">
+
+                            <div class="avatar">
+                                A
+                            </div>
+
+                            <strong>
+                                Alex
+                            </strong>
+
+                        </div>
+
+                        <span class="stars">
+                            ⭐⭐⭐⭐
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Great street food and very affordable.
+                        Definitely coming back!
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             REVIEW FORM
+        ========================================= -->
+
+        <section class="review-form-section">
+
+            <div class="form-heading">
+
+                <span class="form-heading-icon">
+                    ✍️
+                </span>
+
+                <div>
+
+                    <h2>
+                        Leave a Review
+                    </h2>
+
+                    <p>
+                        Tell other food lovers about your experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="reviewName">
+                    Your Name
+                </label>
+
+
+                <input
+                    id="reviewName"
+                    type="text"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="reviewRating">
+                    Rating
+                </label>
+
+
+                <select id="reviewRating">
+
+                    <option
+                        value=""
+                        disabled
+                        selected
+                    >
+                        Choose a rating
+                    </option>
+
+                    <option value="5">
+                        ⭐⭐⭐⭐⭐ — Excellent
+                    </option>
+
+                    <option value="4">
+                        ⭐⭐⭐⭐ — Great
+                    </option>
+
+                    <option value="3">
+                        ⭐⭐⭐ — Good
+                    </option>
+
+                    <option value="2">
+                        ⭐⭐ — Okay
+                    </option>
+
+                    <option value="1">
+                        ⭐ — Poor
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="reviewText">
+                    Your Review
+                </label>
+
+
+                <textarea
+                    id="reviewText"
+                    rows="5"
+                    maxlength="300"
+                    placeholder="Tell us about your experience..."
+                ></textarea>
+
+
+                <div class="character-row">
+
+                    <span>
+                        <span id="characterCount">0</span>
+                        / 300
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="submitReviewButton"
+                class="submit-review-button"
+                type="button"
+            >
+
+                <span>
+                    Submit Review
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+            <p
+                id="reviewMessage"
+                class="review-message"
+            ></p>
+
+        </section>
+
+
+
+        <!-- ========================================
+             BACK
+        ========================================= -->
+
+        <div class="page-actions">
+
+            <a
+                href="order.html"
+                class="back-button"
+            >
+                ← Back to Order
+            </a>
+
+            <a
+                href="explore.html"
+                class="secondary-button"
+            >
+                Explore More →
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+
+    <script src="reviews.js"></script>
+
+</body>
+
+</html>

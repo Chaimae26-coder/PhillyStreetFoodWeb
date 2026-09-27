@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Explore | Philly Street Food
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="explore.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="nav-container">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+            <span class="brand-icon">
+                🍴
+            </span>
+
+            <span>
+                Philly
+                <strong>Street Food</strong>
+            </span>
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a
+                href="explore.html"
+                class="active"
+            >
+                Explore
+            </a>
+
+            <a href="order.html">
+                Order
+            </a>
+
+            <a href="reviews.html">
+                Reviews
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="index.html"
+                class="nav-home-button"
+            >
+                Home
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<section class="explore-hero">
+
+    <div class="content-width">
+
+        <span class="mini-label">
+            DISCOVER PHILLY
+        </span>
+
+        <h1>
+            Find your next bite.
+        </h1>
+
+        <p>
+            Explore food trucks, carts, stands,
+            and pop-ups around Philadelphia.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="explore-section">
+
+    <div class="content-width">
+
+
+        <div class="filters">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search vendors or food..."
+            >
+
+
+            <select id="cuisineFilter">
+
+                <option value="all">
+                    All cuisines
+                </option>
+
+                <option value="mexican">
+                    Mexican
+                </option>
+
+                <option value="halal">
+                    Halal
+                </option>
+
+                <option value="american">
+                    American
+                </option>
+
+                <option value="dessert">
+                    Dessert
+                </option>
+
+                <option value="pizza">
+                    Pizza
+                </option>
+
+                <option value="asian">
+                    Asian
+                </option>
+
+            </select>
+
+
+            <select id="priceFilter">
+
+                <option value="all">
+                    Any price
+                </option>
+
+                <option value="$">
+                    $
+                </option>
+
+                <option value="$$">
+                    $$
+                </option>
+
+                <option value="$$$">
+                    $$$
+                </option>
+
+            </select>
+
+
+            <label class="open-filter">
+
+                <input
+                    id="openNowFilter"
+                    type="checkbox"
+                >
+
+                Open now
+
+            </label>
+
+        </div>
+
+
+        <div class="explore-layout">
+
+
+            <section class="map-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="mini-label">
+                            MAP
+                        </span>
+
+                        <h2>
+                            Around Philadelphia
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="map"></div>
+
+            </section>
+
+
+            <section class="vendors-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="mini-label">
+                            STREET FOOD
+                        </span>
+
+                        <h2>
+                            Nearby Vendors
+                        </h2>
+
+                    </div>
+
+                    <span
+                        id="vendorCount"
+                        class="vendor-count"
+                    ></span>
+
+                </div>
+
+
+                <div
+                    id="vendorList"
+                    class="vendor-list"
+                ></div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<script
+    src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"
+></script>
+
+<script
+    src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.22/leaflet-maplibre-gl.js"
+></script>
+
+<script src="explore.js"></script>
+
+</body>
+</html>
