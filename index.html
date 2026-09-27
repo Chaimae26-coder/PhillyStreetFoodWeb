@@ -12,7 +12,6 @@
 
     <title>Philly Street Food</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
@@ -20,7 +19,10 @@
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -37,17 +39,22 @@
         <div class="nav-container">
 
 
-            <!-- LOGO -->
+            <!-- BRAND -->
 
-            <a href="index.html" class="brand">
+            <a
+                href="index.html"
+                class="brand"
+            >
 
                 <div class="brand-mark">
-                    🔔
+                    🍴
                 </div>
 
                 <div class="brand-text">
 
-                    <span>Philly</span>
+                    <span>
+                        Philly
+                    </span>
 
                     <small>
                         Street Food
@@ -58,7 +65,7 @@
             </a>
 
 
-            <!-- CENTER NAVIGATION -->
+            <!-- DESKTOP NAVIGATION -->
 
             <div class="nav-links">
 
@@ -84,41 +91,58 @@
             </div>
 
 
-            <!-- RIGHT SIDE ACTIONS -->
+            <!-- NAVIGATION ACTIONS -->
 
             <div class="nav-actions">
 
                 <button
                     class="nav-icon-button"
                     id="topSearchButton"
+                    type="button"
                     aria-label="Search"
+                    title="Search"
                 >
                     🔍
                 </button>
 
-                <button
-                    class="nav-icon-button"
+
+                <a
+                    href="explore.html?favorites=true"
+                    class="nav-favorite-button"
                     id="topLikeButton"
-                    aria-label="Favorites"
+                    aria-label="View favorites"
+                    title="View favorites"
                 >
-                    ♡
-                </button>
+
+                    <span>
+                        ♡
+                    </span>
+
+                    <strong id="favoriteCount">
+                        0
+                    </strong>
+
+                </a>
 
             </div>
 
 
-            <!-- MOBILE MENU -->
+            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="mobile-menu-button"
                 id="mobileMenuButton"
+                type="button"
                 aria-label="Open menu"
+                aria-expanded="false"
             >
                 ☰
             </button>
 
         </div>
 
+
+        <!-- MOBILE MENU -->
 
         <div
             class="mobile-menu"
@@ -134,11 +158,15 @@
             </a>
 
             <a href="order.html">
-                🛍️ Order
+                🛒 Order
             </a>
 
             <a href="reviews.html">
                 ⭐ Reviews
+            </a>
+
+            <a href="explore.html?favorites=true">
+                ❤️ Favorites
             </a>
 
         </div>
@@ -157,7 +185,6 @@
 
 
         <div class="container hero-content">
-
 
             <div class="hero-text">
 
@@ -184,7 +211,7 @@
 
                     Discover food trucks, carts,
                     stands, and pop-ups serving
-                    delicious food all around Philadelphia.
+                    delicious food around Philadelphia.
 
                 </p>
 
@@ -200,19 +227,27 @@
                         🔍
                     </span>
 
+
                     <input
                         type="text"
                         id="searchInput"
                         placeholder="Try tacos, halal, pizza..."
                         aria-label="Search street food"
+                        autocomplete="off"
                     >
 
-                    <button id="searchButton">
+
+                    <button
+                        id="searchButton"
+                        type="button"
+                    >
                         Search
                     </button>
 
                 </div>
 
+
+                <!-- HERO ACTIONS -->
 
                 <div class="hero-actions">
 
@@ -223,6 +258,7 @@
                         Explore Street Food →
                     </a>
 
+
                     <a
                         href="#how-it-works"
                         class="secondary-button"
@@ -232,9 +268,7 @@
 
                 </div>
 
-
             </div>
-
 
         </div>
 
@@ -243,7 +277,7 @@
 
 
     <!-- ========================================
-         FRIENDLY INTRO
+         INTRO
     ========================================= -->
 
     <section class="intro-section">
@@ -256,6 +290,7 @@
                 <div class="mini-label">
                     WHY PHILLY STREET FOOD?
                 </div>
+
 
                 <h2>
                     Great food doesn't always
@@ -273,21 +308,23 @@
                     served from a food truck, a small
                     cart, a sidewalk stand, or a pop-up.
 
-                    <br><br>
+                    <br>
+                    <br>
 
                     But finding them can sometimes feel
                     like a treasure hunt.
 
-                    <br><br>
+                    <br>
+                    <br>
 
                     <strong>
                         Philly Street Food makes that
                         search easier.
                     </strong>
 
-                    Find something nearby, see what
-                    they're serving, check the details,
-                    and decide what sounds good.
+                    Find something nearby, check the
+                    details, browse the menu, and decide
+                    what sounds good.
 
                 </p>
 
@@ -317,9 +354,11 @@
                     EASY AS 1 • 2 • 3
                 </div>
 
+
                 <h2>
                     Find your next favorite bite.
                 </h2>
+
 
                 <p>
                     No complicated menus. No endless searching.
@@ -339,9 +378,16 @@
                         1
                     </div>
 
+
+                    <div class="step-icon">
+                        🔎
+                    </div>
+
+
                     <h3>
                         Find
                     </h3>
+
 
                     <p>
 
@@ -362,9 +408,16 @@
                         2
                     </div>
 
+
+                    <div class="step-icon">
+                        🗺️
+                    </div>
+
+
                     <h3>
                         Explore
                     </h3>
+
 
                     <p>
 
@@ -385,9 +438,16 @@
                         3
                     </div>
 
+
+                    <div class="step-icon">
+                        😋
+                    </div>
+
+
                     <h3>
                         Enjoy
                     </h3>
+
 
                     <p>
 
@@ -398,7 +458,6 @@
                     </p>
 
                 </div>
-
 
             </div>
 
@@ -423,13 +482,14 @@
                     START HERE
                 </div>
 
+
                 <h2>
                     What are you craving?
                 </h2>
 
+
                 <p>
-                    Pick a category and we'll help
-                    you find something tasty.
+                    Pick a category and explore something tasty.
                 </p>
 
             </div>
@@ -438,7 +498,12 @@
             <div class="category-grid">
 
 
-                <button class="category-card">
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="tacos"
+                >
+
                     <span class="category-icon">
                         🌮
                     </span>
@@ -446,10 +511,16 @@
                     <span>
                         Tacos
                     </span>
+
                 </button>
 
 
-                <button class="category-card">
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="halal"
+                >
+
                     <span class="category-icon">
                         🍗
                     </span>
@@ -457,10 +528,16 @@
                     <span>
                         Halal
                     </span>
+
                 </button>
 
 
-                <button class="category-card">
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="pizza"
+                >
+
                     <span class="category-icon">
                         🍕
                     </span>
@@ -468,10 +545,16 @@
                     <span>
                         Pizza
                     </span>
+
                 </button>
 
 
-                <button class="category-card">
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="burgers"
+                >
+
                     <span class="category-icon">
                         🍔
                     </span>
@@ -479,10 +562,16 @@
                     <span>
                         Burgers
                     </span>
+
                 </button>
 
 
-                <button class="category-card">
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="healthy"
+                >
+
                     <span class="category-icon">
                         🥗
                     </span>
@@ -490,10 +579,16 @@
                     <span>
                         Healthy
                     </span>
+
                 </button>
 
 
-                <button class="category-card">
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="dessert"
+                >
+
                     <span class="category-icon">
                         🍰
                     </span>
@@ -501,8 +596,8 @@
                     <span>
                         Desserts
                     </span>
-                </button>
 
+                </button>
 
             </div>
 
@@ -513,7 +608,7 @@
 
 
     <!-- ========================================
-         FEATURED VENDORS
+         FEATURED / FAVORITE VENDOR
     ========================================= -->
 
     <section
@@ -529,254 +624,39 @@
                 <div>
 
                     <div class="mini-label">
-                        🔥 LOCAL FAVORITES
+                        ❤️ YOUR FAVORITE
                     </div>
 
+
                     <h2>
-                        Featured Street Food
+                        Featured Vendor
                     </h2>
 
-                    <p>
-                        A few demo vendors to get you started.
+
+                    <p id="featuredSubtitle">
+                        Save a vendor in Explore and
+                        it will appear here.
                     </p>
 
                 </div>
 
 
                 <a
-                    href="explore.html"
+                    href="explore.html?favorites=true"
                     class="view-all"
                 >
-                    View all →
+                    View favorites →
                 </a>
 
             </div>
 
 
-
-            <div class="vendor-grid">
-
-
-                <!-- VENDOR 1 -->
-
-                <article class="vendor-card">
-
-                    <div class="vendor-image taco-image">
-
-                        <span class="food-emoji">
-                            🌮
-                        </span>
-
-                        <span class="open-badge">
-                            <span></span>
-                            Open now
-                        </span>
-
-                        <button
-                            class="favorite-button"
-                            aria-label="Favorite Taco El Barrio"
-                        >
-                            ♡
-                        </button>
-
-                    </div>
-
-
-                    <div class="vendor-content">
-
-                        <h3>
-                            Taco El Barrio
-                        </h3>
-
-                        <p class="vendor-type">
-                            🌮 Mexican
-                        </p>
-
-                        <div class="vendor-info">
-
-                            <span>
-                                ⭐ 4.8
-                            </span>
-
-                            <span>•</span>
-
-                            <span>
-                                $$
-                            </span>
-
-                            <span>•</span>
-
-                            <span>
-                                0.8 mi
-                            </span>
-
-                        </div>
-
-
-                        <p class="vendor-location">
-                            📍 Center City
-                        </p>
-
-
-                        <button
-                            class="vendor-button"
-                            data-vendor="Taco El Barrio"
-                        >
-                            View Vendor →
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- VENDOR 2 -->
-
-                <article class="vendor-card">
-
-                    <div class="vendor-image halal-image">
-
-                        <span class="food-emoji">
-                            🍗
-                        </span>
-
-                        <span class="open-badge">
-                            <span></span>
-                            Open now
-                        </span>
-
-                        <button
-                            class="favorite-button"
-                            aria-label="Favorite Halal Cart Philly"
-                        >
-                            ♡
-                        </button>
-
-                    </div>
-
-
-                    <div class="vendor-content">
-
-                        <h3>
-                            Halal Cart Philly
-                        </h3>
-
-                        <p class="vendor-type">
-                            🍗 Halal
-                        </p>
-
-                        <div class="vendor-info">
-
-                            <span>
-                                ⭐ 4.7
-                            </span>
-
-                            <span>•</span>
-
-                            <span>
-                                $
-                            </span>
-
-                            <span>•</span>
-
-                            <span>
-                                1.2 mi
-                            </span>
-
-                        </div>
-
-
-                        <p class="vendor-location">
-                            📍 University City
-                        </p>
-
-
-                        <button
-                            class="vendor-button"
-                            data-vendor="Halal Cart Philly"
-                        >
-                            View Vendor →
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- VENDOR 3 -->
-
-                <article class="vendor-card">
-
-                    <div class="vendor-image dessert-image">
-
-                        <span class="food-emoji">
-                            🧁
-                        </span>
-
-                        <span class="open-badge">
-                            <span></span>
-                            Open now
-                        </span>
-
-                        <button
-                            class="favorite-button"
-                            aria-label="Favorite Sweet Treats Truck"
-                        >
-                            ♡
-                        </button>
-
-                    </div>
-
-
-                    <div class="vendor-content">
-
-                        <h3>
-                            Sweet Treats Truck
-                        </h3>
-
-                        <p class="vendor-type">
-                            🍰 Desserts
-                        </p>
-
-                        <div class="vendor-info">
-
-                            <span>
-                                ⭐ 4.9
-                            </span>
-
-                            <span>•</span>
-
-                            <span>
-                                $$
-                            </span>
-
-                            <span>•</span>
-
-                            <span>
-                                1.5 mi
-                            </span>
-
-                        </div>
-
-
-                        <p class="vendor-location">
-                            📍 South Street
-                        </p>
-
-
-                        <button
-                            class="vendor-button"
-                            data-vendor="Sweet Treats Truck"
-                        >
-                            View Vendor →
-                        </button>
-
-                    </div>
-
-                </article>
-
+            <div
+                id="featuredVendorContainer"
+                class="featured-vendor-container"
+            >
+
+                <!-- JavaScript renders this -->
 
             </div>
 
@@ -787,26 +667,34 @@
 
 
     <!-- ========================================
-         PHILLY PHOTO SECTION
+         PHILLY PHOTO
     ========================================= -->
 
     <section class="philly-photo-section">
 
         <div class="philly-photo-overlay"></div>
 
+
         <div class="container photo-content">
+
 
             <div class="mini-label">
                 THIS IS PHILLY
             </div>
 
+
             <h2>
+
                 Good food.
                 <br>
+
                 Good people.
                 <br>
+
                 Good neighborhoods.
+
             </h2>
+
 
             <p>
 
@@ -842,15 +730,15 @@
                     PHILLY IS WAITING
                 </div>
 
+
                 <h2>
                     Ready to find your next bite?
                 </h2>
 
-                <p>
 
+                <p>
                     Explore vendors around Philadelphia
                     and discover something new.
-
                 </p>
 
             </div>
@@ -862,7 +750,6 @@
             >
                 Explore the Map →
             </a>
-
 
         </div>
 
@@ -882,14 +769,16 @@
             <div class="footer-brand">
 
                 <div class="footer-logo">
-                    🔔
+                    🍴
                 </div>
+
 
                 <div>
 
                     <strong>
                         Philly Street Food
                     </strong>
+
 
                     <p>
                         Find the food that doesn't
@@ -921,7 +810,6 @@
 
             </div>
 
-
         </div>
 
 
@@ -930,6 +818,7 @@
             <p>
                 Made for Philly food lovers ❤️
             </p>
+
 
             <p>
                 © 2026 Philly Street Food

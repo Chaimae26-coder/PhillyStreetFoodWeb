@@ -1,286 +1,592 @@
+const menus = {
+
+    "Taco El Barrio": {
+        icon: "🌮",
+        description: "Street-style Mexican food",
+        items: [
+            {
+                name: "Street Tacos",
+                description: "Three tacos with your choice of chicken or beef.",
+                price: 10.99
+            },
+            {
+                name: "Chicken Quesadilla",
+                description: "Grilled tortilla with chicken, cheese, and salsa.",
+                price: 9.99
+            },
+            {
+                name: "Loaded Nachos",
+                description: "Crispy chips with cheese, beans, salsa, and toppings.",
+                price: 8.99
+            },
+            {
+                name: "Mexican Rice Bowl",
+                description: "Rice, beans, vegetables, salsa, and your choice of protein.",
+                price: 11.99
+            },
+            {
+                name: "Churros",
+                description: "Warm cinnamon-sugar churros.",
+                price: 5.49
+            }
+        ]
+    },
+
+
+    "Halal Cart Philly": {
+        icon: "🍗",
+        description: "Chicken, lamb, rice, and fresh street-food plates",
+        items: [
+            {
+                name: "Chicken Over Rice",
+                description: "Seasoned chicken over yellow rice with salad and sauce.",
+                price: 11.99
+            },
+            {
+                name: "Lamb Over Rice",
+                description: "Tender seasoned lamb over yellow rice with salad and sauce.",
+                price: 12.99
+            },
+            {
+                name: "Chicken & Lamb Combo",
+                description: "Chicken and lamb served over rice with fresh salad.",
+                price: 13.99
+            },
+            {
+                name: "Falafel Plate",
+                description: "Crispy falafel with rice, salad, and tahini.",
+                price: 10.49
+            },
+            {
+                name: "Baklava",
+                description: "Sweet flaky pastry with nuts and honey.",
+                price: 4.49
+            }
+        ]
+    },
+
+
+    "Philly Fresh Grill": {
+        icon: "🍔",
+        description: "Fresh grilled sandwiches and loaded fries",
+        items: [
+            {
+                name: "Classic Cheesesteak",
+                description: "Thin-sliced steak with melted cheese on a fresh roll.",
+                price: 12.99
+            },
+            {
+                name: "Chicken Cheesesteak",
+                description: "Grilled chicken with melted cheese and peppers.",
+                price: 11.99
+            },
+            {
+                name: "Loaded Fries",
+                description: "Crispy fries topped with cheese and grilled toppings.",
+                price: 7.99
+            },
+            {
+                name: "Grilled Chicken Sandwich",
+                description: "Grilled chicken, lettuce, tomato, and house sauce.",
+                price: 10.99
+            },
+            {
+                name: "Fresh Lemonade",
+                description: "Cold freshly squeezed lemonade.",
+                price: 3.49
+            }
+        ]
+    },
+
+
+    "Sweet Treats Truck": {
+        icon: "🧁",
+        description: "Ice cream, cookies, and Philly-inspired desserts",
+        items: [
+            {
+                name: "Chocolate Chip Cookie",
+                description: "Warm soft-baked chocolate chip cookie.",
+                price: 3.49
+            },
+            {
+                name: "Brownie",
+                description: "Rich chocolate brownie.",
+                price: 4.49
+            },
+            {
+                name: "Ice Cream Cup",
+                description: "Two scoops of your favorite flavor.",
+                price: 5.99
+            },
+            {
+                name: "Strawberry Shortcake",
+                description: "Fresh strawberries, cake, and whipped cream.",
+                price: 6.99
+            },
+            {
+                name: "Philly Cheesecake",
+                description: "Creamy cheesecake with a graham cracker crust.",
+                price: 6.49
+            }
+        ]
+    },
+
+
+    "South Street Slices": {
+        icon: "🍕",
+        description: "Quick slices and classic pizza",
+        items: [
+            {
+                name: "Classic Cheese Slice",
+                description: "Classic cheese pizza.",
+                price: 3.99
+            },
+            {
+                name: "Pepperoni Slice",
+                description: "Cheese pizza topped with pepperoni.",
+                price: 4.99
+            },
+            {
+                name: "Veggie Slice",
+                description: "Pizza topped with fresh vegetables.",
+                price: 4.99
+            },
+            {
+                name: "Garlic Knots",
+                description: "Warm garlic knots with parmesan.",
+                price: 5.49
+            },
+            {
+                name: "Two Slice Combo",
+                description: "Two slices with a fountain drink.",
+                price: 9.99
+            }
+        ]
+    },
+
+
+    "Philly Rice Bowl": {
+        icon: "🍚",
+        description: "Rice bowls with vegetables, chicken, and tofu",
+        items: [
+            {
+                name: "Teriyaki Chicken Bowl",
+                description: "Chicken, rice, vegetables, and teriyaki sauce.",
+                price: 11.99
+            },
+            {
+                name: "Tofu Rice Bowl",
+                description: "Crispy tofu, vegetables, and rice.",
+                price: 10.99
+            },
+            {
+                name: "Korean BBQ Bowl",
+                description: "Korean-style beef with rice and vegetables.",
+                price: 12.99
+            },
+            {
+                name: "Vegetable Bowl",
+                description: "Fresh seasonal vegetables over steamed rice.",
+                price: 9.99
+            },
+            {
+                name: "Mango Green Tea",
+                description: "Refreshing mango green tea.",
+                price: 3.99
+            }
+        ]
+    }
+
+};
+
+
 // ========================================
-// ORDER SYSTEM
+// SELECT VENDOR
+// ========================================
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const selectedVendor =
+    params.get("vendor");
+
+
+const vendorName =
+    menus[selectedVendor]
+        ? selectedVendor
+        : "Taco El Barrio";
+
+
+const vendor =
+    menus[vendorName];
+
+
+// ========================================
+// CART
 // ========================================
 
 let cart = [];
 
 
 // ========================================
-// DOM ELEMENTS
+// ELEMENTS
 // ========================================
 
-const addButtons = document.querySelectorAll(".add-button");
+const vendorNameElement =
+    document.getElementById("vendorName");
 
-const cartContainer = document.getElementById("cart");
-const totalElement = document.getElementById("total");
+const vendorDescription =
+    document.getElementById("vendorDescription");
 
-const pickupTime = document.getElementById("pickupTime");
+const vendorIcon =
+    document.getElementById("vendorIcon");
+
+const menuItems =
+    document.getElementById("menuItems");
+
+const cartElement =
+    document.getElementById("cart");
+
+const totalElement =
+    document.getElementById("total");
+
+const itemCount =
+    document.getElementById("itemCount");
+
+const pickupTime =
+    document.getElementById("pickupTime");
+
+const message =
+    document.getElementById("message");
+
 const placeOrderButton =
     document.getElementById("placeOrderButton");
 
-const message = document.getElementById("message");
+const vendorSelect =
+    document.getElementById("vendorSelect");
 
 const confirmation =
     document.getElementById("confirmation");
 
-const confirmedPickup =
-    document.getElementById("confirmedPickup");
 
-const confirmedTotal =
-    document.getElementById("confirmedTotal");
+// ========================================
+// VENDOR HEADER
+// ========================================
+
+vendorNameElement.textContent =
+    vendorName;
+
+vendorDescription.textContent =
+    vendor.description;
+
+vendorIcon.textContent =
+    vendor.icon;
 
 
 // ========================================
-// ADD BUTTONS
+// VENDOR SWITCHER
 // ========================================
 
-addButtons.forEach(function (button) {
+Object.keys(menus).forEach(function (name) {
 
-    button.addEventListener("click", function () {
+    const option =
+        document.createElement("option");
 
-        const name = button.dataset.name;
-        const price = Number(button.dataset.price);
+    option.value = name;
 
-        addToCart(name, price);
+    option.textContent = name;
 
-        // Button animation
-        button.classList.add("added");
+    option.selected = name === vendorName;
 
-        const originalText = button.textContent;
-
-        button.textContent = "✓ Added";
-
-        setTimeout(function () {
-
-            button.classList.remove("added");
-
-            button.textContent = originalText;
-
-        }, 800);
-
-    });
+    vendorSelect.appendChild(option);
 
 });
 
 
-// ========================================
-// ADD TO CART
-// ========================================
+vendorSelect.addEventListener(
+    "change",
+    function () {
 
-function addToCart(name, price) {
-
-    const existingItem = cart.find(function (item) {
-        return item.name === name;
-    });
-
-
-    if (existingItem) {
-
-        existingItem.quantity++;
-
-    } else {
-
-        cart.push({
-            id: Date.now(),
-            name: name,
-            price: price,
-            quantity: 1
-        });
+        window.location.href =
+            "order.html?vendor=" +
+            encodeURIComponent(vendorSelect.value);
 
     }
-
-
-    displayCart();
-
-    showMessage(`${name} added to your order!`, "success");
-
-}
+);
 
 
 // ========================================
-// DISPLAY CART
+// DISPLAY MENU
 // ========================================
 
-function displayCart() {
+function displayMenu() {
 
-    cartContainer.innerHTML = "";
-
-
-    // Empty cart
-    if (cart.length === 0) {
-
-        cartContainer.innerHTML = `
-            <div class="empty-cart">
-                <div class="empty-cart-icon">🛒</div>
-
-                <p>Your order is empty.</p>
-
-                <small>
-                    Add something delicious!
-                </small>
-            </div>
-        `;
-
-        updateTotal();
-
-        updateItemCount();
-
-        return;
-    }
+    menuItems.innerHTML = "";
 
 
-    // Create items
-    cart.forEach(function (item, index) {
+    vendor.items.forEach(function (item, index) {
 
-        const itemDiv =
-            document.createElement("div");
+        const card =
+            document.createElement("article");
 
-        itemDiv.classList.add("cart-item");
-
-        itemDiv.dataset.id = item.id;
+        card.className = "menu-card";
 
 
-        itemDiv.innerHTML = `
+        card.innerHTML = `
 
-            <div class="cart-item-info">
+            <div class="menu-item-info">
 
-                <strong>
+                <h3>
                     ${item.name}
-                </strong>
+                </h3>
 
-                <span>
+                <p>
+                    ${item.description}
+                </p>
+
+                <span class="menu-item-price">
                     $${item.price.toFixed(2)}
                 </span>
 
             </div>
 
 
-            <div class="quantity-controls">
-
-                <button
-                    class="quantity-button decrease"
-                    data-index="${index}"
-                    aria-label="Decrease quantity">
-                    −
-                </button>
-
-                <span class="quantity">
-                    ${item.quantity}
-                </span>
-
-                <button
-                    class="quantity-button increase"
-                    data-index="${index}"
-                    aria-label="Increase quantity">
-                    +
-                </button>
-
-            </div>
+            <button
+                class="add-button"
+                data-index="${index}"
+                type="button"
+            >
+                Add +
+            </button>
 
         `;
 
 
-        cartContainer.appendChild(itemDiv);
-
-
-        // Small entrance animation
-        setTimeout(function () {
-
-            itemDiv.classList.add("visible");
-
-        }, 20);
+        menuItems.appendChild(card);
 
     });
 
 
-    attachQuantityEvents();
+    document.querySelectorAll(
+        ".add-button"
+    ).forEach(function (button) {
 
-    updateTotal();
+        button.addEventListener(
+            "click",
+            function () {
 
-    updateItemCount();
+                const index =
+                    Number(
+                        button.dataset.index
+                    );
+
+
+                addToCart(
+                    vendor.items[index]
+                );
+
+
+                button.textContent =
+                    "Added ✓";
+
+                button.classList.add(
+                    "added"
+                );
+
+
+                setTimeout(function () {
+
+                    button.textContent =
+                        "Add +";
+
+                    button.classList.remove(
+                        "added"
+                    );
+
+                }, 700);
+
+            }
+        );
+
+    });
 
 }
 
 
 // ========================================
-// QUANTITY EVENTS
+// ADD TO CART
 // ========================================
 
-function attachQuantityEvents() {
+function addToCart(item) {
 
-    const buttons =
-        document.querySelectorAll(".quantity-button");
+    const existing =
+        cart.find(function (cartItem) {
 
-
-    buttons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            const index =
-                Number(button.dataset.index);
-
-
-            const amount =
-                button.classList.contains("increase")
-                    ? 1
-                    : -1;
-
-
-            changeQuantity(index, amount);
+            return cartItem.name === item.name;
 
         });
 
-    });
+
+    if (existing) {
+
+        existing.quantity += 1;
+
+    } else {
+
+        cart.push({
+
+            name: item.name,
+
+            price: item.price,
+
+            quantity: 1
+
+        });
+
+    }
+
+
+    updateCart();
 
 }
 
 
 // ========================================
-// CHANGE QUANTITY
+// UPDATE CART
 // ========================================
 
-function changeQuantity(index, amount) {
+function updateCart() {
 
-    if (!cart[index]) {
-        return;
+    cartElement.innerHTML = "";
+
+
+    if (cart.length === 0) {
+
+        cartElement.innerHTML = `
+
+            <p class="empty-cart">
+                Your cart is empty.
+                <br>
+                Add something delicious!
+            </p>
+
+        `;
+
+    } else {
+
+        cart.forEach(function (item, index) {
+
+            const row =
+                document.createElement("div");
+
+            row.className = "cart-item";
+
+
+            row.innerHTML = `
+
+                <div>
+
+                    <div class="cart-item-name">
+                        ${item.name}
+                    </div>
+
+                    <div class="cart-item-price">
+                        $${item.price.toFixed(2)}
+                    </div>
+
+
+                    <div class="quantity-controls">
+
+                        <button
+                            class="quantity-button"
+                            data-index="${index}"
+                            data-change="-1"
+                            type="button"
+                        >
+                            −
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            class="quantity-button"
+                            data-index="${index}"
+                            data-change="1"
+                            type="button"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <strong>
+                    $${(
+                        item.price *
+                        item.quantity
+                    ).toFixed(2)}
+                </strong>
+
+            `;
+
+
+            cartElement.appendChild(row);
+
+        });
+
+
+        document.querySelectorAll(
+            ".quantity-button"
+        ).forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const index =
+                        Number(
+                            button.dataset.index
+                        );
+
+                    const change =
+                        Number(
+                            button.dataset.change
+                        );
+
+
+                    cart[index].quantity +=
+                        change;
+
+
+                    if (
+                        cart[index].quantity <= 0
+                    ) {
+
+                        cart.splice(
+                            index,
+                            1
+                        );
+
+                    }
+
+
+                    updateCart();
+
+                }
+            );
+
+        });
+
     }
 
 
-    cart[index].quantity += amount;
-
-
-    // Remove item
-    if (cart[index].quantity <= 0) {
-
-        const removedName = cart[index].name;
-
-        cart.splice(index, 1);
-
-        showMessage(
-            `${removedName} removed from your order.`,
-            "info"
-        );
-
-    }
-
-
-    displayCart();
-
-}
-
-
-// ========================================
-// CALCULATE TOTAL
-// ========================================
-
-function calculateTotal() {
-
-    return cart.reduce(function (total, item) {
-
-        return total +
-            item.price * item.quantity;
-
-    }, 0);
+    updateTotal();
 
 }
 
@@ -291,122 +597,33 @@ function calculateTotal() {
 
 function updateTotal() {
 
-    const total = calculateTotal();
+    let total = 0;
 
-    animatePrice(total);
-
-}
+    let count = 0;
 
 
-// ========================================
-// ANIMATED PRICE
-// ========================================
+    cart.forEach(function (item) {
 
-function animatePrice(newTotal) {
+        total +=
+            item.price *
+            item.quantity;
 
-    const oldText =
-        totalElement.textContent
-            .replace("$", "");
+        count +=
+            item.quantity;
 
-    const oldTotal =
-        Number(oldText) || 0;
+    });
 
 
-    const duration = 300;
-
-    const startTime = performance.now();
-
-
-    function animate(currentTime) {
-
-        const progress =
-            Math.min(
-                (currentTime - startTime) / duration,
-                1
-            );
+    totalElement.textContent =
+        "$" +
+        total.toFixed(2);
 
 
-        const value =
-            oldTotal +
-            (newTotal - oldTotal) * progress;
-
-
-        totalElement.textContent =
-            "$" + value.toFixed(2);
-
-
-        if (progress < 1) {
-
-            requestAnimationFrame(animate);
-
-        }
-
-    }
-
-
-    requestAnimationFrame(animate);
+    itemCount.textContent =
+        count +
+        (count === 1 ? " item" : " items");
 
 }
-
-
-// ========================================
-// ITEM COUNT
-// ========================================
-
-function updateItemCount() {
-
-    const itemCount =
-        cart.reduce(function (total, item) {
-
-            return total + item.quantity;
-
-        }, 0);
-
-
-    const countElement =
-        document.querySelector(".section-heading span");
-
-
-    if (!countElement) {
-        return;
-    }
-
-
-    countElement.textContent =
-        itemCount === 1
-            ? "1 item"
-            : `${itemCount} items`;
-
-}
-
-
-// ========================================
-// PICKUP TIME
-// ========================================
-
-pickupTime.addEventListener("change", function () {
-
-    if (pickupTime.value === "") {
-        return;
-    }
-
-
-    showMessage(
-        `Pickup time selected: ${pickupTime.value}`,
-        "success"
-    );
-
-
-    pickupTime.classList.add("selected");
-
-
-    setTimeout(function () {
-
-        pickupTime.classList.remove("selected");
-
-    }, 500);
-
-});
 
 
 // ========================================
@@ -417,224 +634,91 @@ placeOrderButton.addEventListener(
     "click",
     function () {
 
-        // No items
+        message.textContent = "";
+
+
         if (cart.length === 0) {
 
-            showMessage(
-                "Please add at least one item to your order.",
-                "error"
-            );
-
-            shakeElement(cartContainer);
+            message.textContent =
+                "Please add at least one item.";
 
             return;
+
         }
 
 
-        // No pickup time
-        if (pickupTime.value === "") {
+        if (!pickupTime.value) {
 
-            showMessage(
-                "Please choose a pickup time.",
-                "error"
-            );
-
-            shakeElement(pickupTime);
-
-            pickupTime.focus();
+            message.textContent =
+                "Please choose a pickup time.";
 
             return;
+
         }
 
 
-        // Loading state
-        placeOrderButton.disabled = true;
+        const total =
+            cart.reduce(
+                function (sum, item) {
 
-        placeOrderButton.innerHTML = `
-            <span class="spinner"></span>
-            Processing...
-        `;
+                    return sum +
+                        item.price *
+                        item.quantity;
+
+                },
+                0
+            );
 
 
-        // Simulate order processing
-        setTimeout(function () {
+        document.getElementById(
+            "confirmedVendor"
+        ).textContent =
+            vendorName;
 
-            completeOrder();
 
-        }, 900);
+        document.getElementById(
+            "confirmedPickup"
+        ).textContent =
+            pickupTime.value;
+
+
+        document.getElementById(
+            "confirmedTotal"
+        ).textContent =
+            "$" +
+            total.toFixed(2);
+
+
+        confirmation.classList.remove(
+            "hidden"
+        );
+
+
+        document.querySelector(
+            ".order-layout"
+        ).style.display =
+            "none";
+
+
+        document.querySelector(
+            ".order-hero"
+        ).style.display =
+            "none";
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
     }
 );
 
 
 // ========================================
-// COMPLETE ORDER
+// START
 // ========================================
 
-function completeOrder() {
+displayMenu();
 
-    const total =
-        calculateTotal();
-
-
-    confirmedPickup.textContent =
-        pickupTime.value;
-
-
-    confirmedTotal.textContent =
-        "$" + total.toFixed(2);
-
-
-    // Hide order sections
-    const orderSection =
-        document.querySelector(".order-section");
-
-    const pickupSection =
-        document.querySelector(".pickup-section");
-
-
-    if (orderSection) {
-
-        orderSection.classList.add("hidden");
-
-    }
-
-
-    if (pickupSection) {
-
-        pickupSection.classList.add("hidden");
-
-    }
-
-
-    placeOrderButton.classList.add("hidden");
-
-    message.classList.add("hidden");
-
-
-    // Show confirmation
-    confirmation.classList.remove("hidden");
-
-
-    // Scroll
-    confirmation.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
-
-    // Celebration
-    createConfetti();
-
-}
-
-
-// ========================================
-// MESSAGES
-// ========================================
-
-function showMessage(text, type) {
-
-    message.textContent = text;
-
-    message.className = "";
-
-    message.classList.add(`message-${type}`);
-
-
-    clearTimeout(window.messageTimer);
-
-
-    window.messageTimer =
-        setTimeout(function () {
-
-            message.textContent = "";
-
-            message.className = "";
-
-        }, 2500);
-
-}
-
-
-// ========================================
-// SHAKE ANIMATION
-// ========================================
-
-function shakeElement(element) {
-
-    element.classList.add("shake");
-
-
-    setTimeout(function () {
-
-        element.classList.remove("shake");
-
-    }, 500);
-
-}
-
-
-// ========================================
-// CONFETTI
-// ========================================
-
-function createConfetti() {
-
-    const colors = [
-        "#ef4444",
-        "#f97316",
-        "#facc15",
-        "#22c55e",
-        "#3b82f6"
-    ];
-
-
-    for (let i = 0; i < 60; i++) {
-
-        const piece =
-            document.createElement("div");
-
-
-        piece.classList.add("confetti");
-
-
-        piece.style.left =
-            Math.random() * 100 + "vw";
-
-
-        piece.style.backgroundColor =
-            colors[
-                Math.floor(
-                    Math.random() * colors.length
-                )
-            ];
-
-
-        piece.style.animationDelay =
-            Math.random() * 0.5 + "s";
-
-
-        piece.style.transform =
-            `rotate(${Math.random() * 360}deg)`;
-
-
-        document.body.appendChild(piece);
-
-
-        setTimeout(function () {
-
-            piece.remove();
-
-        }, 3000);
-
-    }
-
-}
-
-
-// ========================================
-// INITIAL DISPLAY
-// ========================================
-
-displayCart();
+updateCart();
